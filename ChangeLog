@@ -1,4 +1,26 @@
-* 0.6 - 10/09/2012
+* 0.8 - unreleased
+- Add option -M/--meta to add or update document metadata during conversion
+
+* 0.7 - released 2015-07-09
+- Ported to Python 3 (Riccardo Magliocchetti)
+- Update Indexes (eg. TOC) during conversion (Peter Demin)
+- Added XLSX support (Josias Montag)
+- Fix output to non-existing directory
+- Ensure that LibreOfficeDev release are using new long options (Chia-liang Kao)
+- Set output format based on output filename extension (Patrick McAndrew)
+- Accept 'office' as binary on MacOSX (Andreas Jung)
+- Added Microsoft WPS import filter (Josias Montag)
+- Fix --stdout output on Python 3 (Caolán McNamara)
+- Added -F/--field option to update user fields during conversion (Raphaël Pinson)
+- Added OpenOffice search path on MacOSX (Vittal Aithal)
+- Cycle through all images references before conversion
+- Added --preserve option to preserve timestamp and permissions (Vincent Bernat)
+- Added --stdin option to read from standard input
+- Accept remote URLs as input filename
+- Fix exit code 81 and recover from initial failure (Daniel Vandersluis)
+- Improve documentation related to error codes and using unoconv with Nginx/Apache/PHP
+
+* 0.6 - released 2012-09-10
 - Implement debugging output (-vvv)
 - Fixes to office comparison
 - Documentation improvements
@@ -13,7 +35,7 @@
 - Change to how import plugin options (-i) work (incompatible change)
 - Use 127.0.0.1 instead of localhost to avoid potential resolver problems (Maik Penz)
 
-* 0.5 - 16/04/2012
+* 0.5 - released 2012-04-16
 - Improve handling of LD_LIBRARY_PATH (Paul Polak)
 - Change to how -o/--output/--outputpath works (can now output to filenames too)
 - Added LibreOffice support (Hans de Graaff)
@@ -30,12 +52,12 @@
 - Fix for LibreOffice double-hyphen options since LibreOffice >= 3.4 (Lars Knickrehm)
 - Deal with integer values in export filters (Steven Davidson)
 
-* 0.4 - released 20/10/2010
+* 0.4 - released 2010-10-20
 - Now properly check if there is a GUI attached and terminate() or -unaccept instance
 - Added official OpenOffice path '/opt/openoffice*/program'
-- Added support for OpenOffice on Windows (Fernando Lucas Rodriguez)
-- Added --pipe option to communicate with UNO pipe (Fernando Lucas Rodriguez)
-- Added -o/--outputpath option to modify the output path (Fernando Lucas Rodriguez)
+- Added support for OpenOffice on Windows (*redacted*)
+- Added --pipe option to communicate with UNO pipe (*redacted*)
+- Added -o/--outputpath option to modify the output path (*redacted*)
 - Added support for MediaWiki output (txt)
 - Added OpenOffice path to LD_LIBRARY_PATH env var
 - Added -nofirstwizard to ooffice invocations
@@ -57,14 +79,14 @@
 - Added docs/filters.txt with information about import and export filters
 - Added official OpenOffice path for MacOSX (Jeff Harmon)
 - First update links, then indexes (Nicolae Mihalache)
-- More improvements to OpenOffice support on Windows (Fernando Lucas Rodriguez)
-- Improve terminating OpenOffice on Windows (Fernando Lucas Rodriguez)
-- Support OpenOffice installations on Windows on drive-letters other than C: (Fernando Lucas Rodriguez)
+- More improvements to OpenOffice support on Windows (*redacted*)
+- Improve terminating OpenOffice on Windows (*redacted*)
+- Support OpenOffice installations on Windows on drive-letters other than C: (*redacted*)
 - Allow to apply a style template during conversion
 - Improvements to stdout and stderr messages consistency
 - Updated documentation
 
-* 0.3 - released 31/08/2007
+* 0.3 - released 2007-08-31
 - Determine doctype from input filename (if not specified)
 - Created a seperate class and allow to use as a library (like DocumentConverter.py)
 - Makefile now adds symlinks for different ODF formats like eg, odt2pdf or odp2pdf
@@ -75,7 +97,7 @@
 - Changed -b option to -f option to match a2x options
 - Add unoconv manual page
 
-* 0.2 - released 20/05/2007
+* 0.2 - released 2007-05-20
 - Added support for almost 100 graphics, presentation and spreadsheet documents
 - Added -d/--doctype option to specify the document type
 - Added -v/--verbose to show more information
@@ -86,5 +108,5 @@
 - Use glob to find possible location of pyuno
 - Option -d/--doctype now affects -l/--list
 
-* 0.1 - released 19/05/2007
+* 0.1 - released 2007-05-19
 - Initial release

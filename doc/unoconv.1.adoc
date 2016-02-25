@@ -53,6 +53,11 @@ connections or even for remote connections.
 +
     Default document type is 'pdf'.
 
+-F, --field::
+    Add or replace user-defined text field with value
++
+    eg. -F Client_Name="Oracle"
+
 -i, --import::
     Set specific import filters options (related to the used LibreOffice
     import filter based on the input filename).
@@ -61,6 +66,11 @@ connections or even for remote connections.
 
 -l, --listener::
     Start unoconv as listener for unoconv clients to connect to.
+
+-M, --meta::
+    Add or replace document metadata with value
++
+    eg. -M Author="Dag Wieers"
 
 -n, --no-launch::
     By default if no listener is running, unoconv will launch its own
@@ -74,6 +84,9 @@ connections or even for remote connections.
     basename (and add output extension). Otherwise use it as the
     output filename.
 
+--password::
+    Provide a password to decrypt the document
+
 --pipe::
     Use a pipe as an alternative connection mechanism to talk to LibreOffice.
 
@@ -82,6 +95,9 @@ connections or even for remote connections.
 +
     Default port is '2002'.
 
+--preserve::
+    Keep timestamp and permissions of the original document
+
 -s, --server::
     Server (address) to listen on (as listener) or to connect to (as client).
 +
@@ -89,6 +105,9 @@ connections or even for remote connections.
 
 --show::
     List the possible output formats to be used with +-f+.
+
+--stdin::
+    Read input file from stdin (filenames are ignored if provided)
 
 --stdout::
     Print converted output file to stdout.
@@ -241,7 +260,7 @@ Here is a list of all options, however for more details please look in
  - ExportLinksRelativeFsys
  - ExportNotes
  - ExportNotesPages
- - FirstPagOnLeft
+ - FirstPageOnLeft
  - FormsType
  - HideViewerMenubar
  - HideViewerToolbar

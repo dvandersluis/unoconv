@@ -108,6 +108,21 @@ Default document type is \'pdf\'\&.
 .\}
 .RE
 .PP
+\-F, \-\-field
+.RS 4
+Add or replace user\-defined text field with value
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+eg\&. \-F Client_Name="Oracle"
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
 \-i, \-\-import
 .RS 4
 Set specific import filters options (related to the used LibreOffice import filter based on the input filename)\&.
@@ -128,6 +143,21 @@ See the *IMPORT FILTERS* section\&.
 Start unoconv as listener for unoconv clients to connect to\&.
 .RE
 .PP
+\-M, \-\-meta
+.RS 4
+Add or replace document metadata with value
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+eg\&. \-M Author="Dag Wieers"
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
 \-n, \-\-no\-launch
 .RS 4
 By default if no listener is running, unoconv will launch its own (temporary) listener to make sure the conversion works\&. This option will abort the conversion if no listener is found, rather than starting our own listener\&.
@@ -136,6 +166,11 @@ By default if no listener is running, unoconv will launch its own (temporary) li
 \-o, \-\-output
 .RS 4
 If the argument is a directory, put the converted documents in this directory\&. If multiple input files are provided, use it as a basename (and add output extension)\&. Otherwise use it as the output filename\&.
+.RE
+.PP
+\-\-password
+.RS 4
+Provide a password to decrypt the document
 .RE
 .PP
 \-\-pipe
@@ -158,6 +193,11 @@ Default port is \'2002\'\&.
 .\}
 .RE
 .PP
+\-\-preserve
+.RS 4
+Keep timestamp and permissions of the original document
+.RE
+.PP
 \-s, \-\-server
 .RS 4
 Server (address) to listen on (as listener) or to connect to (as client)\&.
@@ -177,6 +217,11 @@ Default server is \'localhost\'\&.
 .RS 4
 List the possible output formats to be used with
 \-f\&.
+.RE
+.PP
+\-\-stdin
+.RS 4
+Read input file from stdin (filenames are ignored if provided)
 .RE
 .PP
 \-\-stdout
@@ -205,7 +250,7 @@ You can provide one or more \fBfiles\fR as arguments to convert each of them to 
 .sp
 Depending on the used input file, a different LibreOffice import filter is automatically used by unoconv\&. This import filter can be influenced by the \-i option that, depending on the filter used, accepts different arguments\&.
 .sp
-It is not always clear what import filter options you can provide, the import dialog in LibreOffice for the filter you ar using might give a good indication as to what you can expect as import filter options\&.
+It is not always clear what import filter options you can provide, the import dialog in LibreOffice for the filter you are using might give a good indication as to what you can expect as import filter options\&.
 .sp
 The reference is LibreOffice\(cqs documentation, for spreadsheets it is described at: \m[blue]\fBhttp://wiki\&.services\&.openoffice\&.org/wiki/Documentation/DevGuide/Spreadsheets/Filter_Options\fR\m[] but we will look into some examples\&.
 .SH "DEFAULT IMPORT FILTER OPTIONS"
@@ -545,7 +590,7 @@ ExportNotesPages
 .sp -1
 .IP \(bu 2.3
 .\}
-FirstPagOnLeft
+FirstPageOnLeft
 .RE
 .sp
 .RS 4

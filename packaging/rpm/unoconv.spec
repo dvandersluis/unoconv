@@ -1,10 +1,8 @@
-%{?el4:%define _with_openoffice.org2 1}
-
 %define rpmrelease %nil
 
 Summary: Tool to convert between any document format supported by LibreOffice
 Name: unoconv
-Version: 0.6
+Version: 0.7
 Release: 1%{?rpmrelease}%{?dist}
 License: GPL
 Group: System Environment/Base
@@ -16,8 +14,6 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 BuildRequires: python >= 2.0
 Requires: python >= 2.0
-%{!?_with_openoffice.org2:Requires:openoffice.org-pyuno >= 2.0}
-%{?_with_openoffice.org2:Requires:openoffice.org2-pyuno >= 2.0}
 
 %description
 unoconv converts between any document format that LibreOffice understands.
@@ -36,6 +32,7 @@ and many more...
 %setup
 
 %build
+%{__make} doc
 
 %install
 %{__rm} -rf %{buildroot}
@@ -46,11 +43,14 @@ and many more...
 
 %files
 %defattr(-, root, root, 0755)
-%doc AUTHORS ChangeLog COPYING README* WISHLIST doc/ tests/
+%doc AUTHORS ChangeLog COPYING README* doc/*.adoc doc/*.html
 %doc %{_mandir}/man1/unoconv.1*
 %{_bindir}/unoconv
 
 %changelog
+* Thu Jul 09 2015 Dag Wieers <dag@wieers.com> - 0.7-1
+- Updated to release 0.7.
+
 * Mon Sep 10 2012 Dag Wieers <dag@wieers.com> - 0.6-1
 - Updated to release 0.6.
 
